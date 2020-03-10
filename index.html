@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Cat Breeds</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="list" v-cloak>
+      <h1>Cat Breeds</h1>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Origin</th>
+          <th>Characteristics</th>
+          <th>Hair</th>
+          <th>Comments</th>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in cats" v-bind:class="{even: (index +1) % 2 === 0, odd: (index + 1) % 2 !==0}">
+            <td>{{item.name}}</td>
+            <td>{{item.orign}}</td>
+            <td>{{item.characteristics}}</td>
+            <td>{{item.hair}}</td>
+            <td>{{item.comments}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+    <script src="sketch.js"></script>
+  </body>
+
+</html>
